@@ -965,7 +965,7 @@ footer ul {
   }
   .space {
     display: none; 
-  }
+  } 
   footer {
     display: flex;
     flex-direction: column;
