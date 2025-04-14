@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     (function() {
-      emailjs.init("k8KTOc5b9u0IFtZRk"); // <-- Sostituisci con la tua Public Key
+      emailjs.init("k8KTOc5b9u0IFtZRk"); // <-- Inserisci qui la tua public key
     })();
   
     const form = document.getElementById('contact-form');
@@ -112,12 +112,12 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
   
-      emailjs.sendForm('service_h4su60f', 'Ciao', this)
+      emailjs.sendForm('service_h4su60f', 'template_x0nqigs', this)
         .then(() => {
-          message.innerHTML = `<div class="alert alert-success">Messaggio inviato con successo!</div>`;
+          message.innerHTML = `Messaggio inviato con successo!`;
           form.reset();
         }, (error) => {
-          message.innerHTML = `<div class="alert alert-danger">Errore: ${error.text}</div>`;
+          message.innerHTML = `Errore: ${error.text}</div>`;
         });
     });
 });

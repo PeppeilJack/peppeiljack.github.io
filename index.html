@@ -165,7 +165,7 @@ Amo tutto ciò che stimola l’immaginazione: che sia un’interfaccia ben proge
     <footer id="footer" class="footer">
 
         <div class="footer-center">
-            <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form">
+            <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form" id="contact-form">
 
                 <h2 class="text-center mb-4">Grazie di essere passato/a!</h2>
         
@@ -177,7 +177,7 @@ Amo tutto ciò che stimola l’immaginazione: che sia un’interfaccia ben proge
         
                 <div class="mb-3">
                   <label for="message" class="form-label">Messaggio</label>
-                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                  <textarea class="form-control" id="form-message" name="message" rows="5" required></textarea>
                 </div>
         
                 <button type="submit" class="btn btn-custom w-100">Invia</button>
@@ -194,5 +194,7 @@ Amo tutto ciò che stimola l’immaginazione: che sia un’interfaccia ben proge
       </footer>
     <!-- Scripts -->
     <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </body>
 </html>
