@@ -95,29 +95,41 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!currentSection) {
           activeDot.style.opacity = "0";
       }
-  }
+    } // <--- Questa parentesi chiude correttamente la funzione updateActiveDot
 
+    // Event listeners per aggiornare l'active-dot
     window.addEventListener("scroll", updateActiveDot);
     window.addEventListener("resize", updateActiveDot); // Aggiorna su resize
     updateActiveDot(); // Inizializza la posizione al caricamento
 
+    // Funzione per inviare email
+    function sendEmail() {
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("form-message");
+      const form = document.getElementById("contact-form"); // Seleziona il form
 
-    (function() {
-      emailjs.init("k8KTOc5b9u0IFtZRk"); // <-- Inserisci qui la tua public key
-    })();
-  
-    const form = document.getElementById('contact-form');
-    const message = document.getElementById('form-message');
-  
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-  
-      emailjs.sendForm('service_h4su60f', 'template_x0nqigs', this)
+      if (!emailInput || !messageInput || !form) {
+        console.error("Form elements not found!");
+        return;
+      }
+
+      const templateParams = {
+        email: emailInput.value,
+        message: messageInput.value,
+      };
+
+      emailjs
+        .send("service_h4su60f", "template_55pkhe8", templateParams)
         .then(() => {
-          message.innerHTML = `Messaggio inviato con successo!`;
-          form.reset();
-        }, (error) => {
-          message.innerHTML = `Errore: ${error.text}</div>`;
+          alert("Email inviata con successo!");
+          form.reset(); // Resetta i campi del form
+        })
+        .catch((error) => {
+          console.error("Errore durante l'invio dell'email:", error);
+          alert("Email non inviata. Riprova.");
         });
-    });
+    }
+
+    const sendButton = document.querySelector("#contact-form button[type='button']");
+    sendButton.addEventListener("click", sendEmail);
 });
