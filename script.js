@@ -121,11 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
       emailjs
         .send("service_h4su60f", "template_55pkhe8", templateParams)
         .then(() => {
-          alert("Email inviata con successo!");
+          alert("Email successfully sent!");
           form.reset(); // Resetta i campi del form
         })
         .catch((error) => {
-          console.error("Errore durante l'invio dell'email:", error);
+          console.error("Error sendind the email:", error);
           alert("Email non inviata. Riprova.");
         });
     }
