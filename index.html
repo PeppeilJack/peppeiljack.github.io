@@ -151,17 +151,33 @@ Amo tutto ciò che stimola l’immaginazione: che sia un’interfaccia ben proge
 
     <!-- Footer Section -->
     <footer id="footer" class="footer">
-        <p>© 2025 Giuseppe Lenti</p>
-      
+
         <div class="footer-center">
-            <h4>Grazie per essere passato!</h4>
-            </h4>
-            <a class="btn-footer" href="mailto:tuoindirizzo@email.com?subject=Contatto dal Portfolio&body=Ciao, vorrei avere maggiori informazioni...">Contattami</a>
+            <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form">
+
+                <h2 class="text-center mb-4">Grazie di essere passato/a!</h2>
+        
+        
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+        
+                <div class="mb-3">
+                  <label for="message" class="form-label">Messaggio</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+        
+                <button type="submit" class="btn btn-custom w-100">Invia</button>
+              </form>
         </div>
       
         <div class="footer-right">
-            <img src="./img/instagram_logo.png" alt="" width="50px" height="50px"><a href="#"></a>
-            <img src="./img/linkedin_logo.png" alt="" width="40px" height="40px"><a href="#"></a>
+            <div class="social-icons">
+           <a href="#"> <img src="./img/instagram_logo.png" alt="" width="40px" height="40px"></a>
+           <a href="#"> <img src="./img/linkedin_logo.png" alt="" width="30px" height="30px"></a>
+        </div>
+        <p>© 2025 Giuseppe Lenti</p>
         </div>
       </footer>
     <!-- Scripts -->

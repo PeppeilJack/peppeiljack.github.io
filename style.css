@@ -582,36 +582,30 @@ h1.animated::before {
 
 .description{display: flex;flex-direction: column;}
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  color: white;
-  flex-wrap: wrap;
+    display: flex; /* Abilita Flexbox */
+    flex-direction: column; /* Posiziona gli elementi uno sopra l'altro */
+    align-items: center; /* Centra gli elementi orizzontalmente */
+    gap: 20px; /* Aggiunge uno spazio tra gli elementi */
+    padding-top: 120px; /* Spaziatura interna */
 }
 
-.footer p {
-  margin: 0;
-  order: 1;
-  margin-top: 10px; /* Sposta il paragrafo leggermente più in basso */
+.footer-center {
+    width: auto; /* Occupa tutta la larghezza disponibile */
+    text-align: center; /* Centra il contenuto */
+    font-family: "Jersey 20", sans-serif; /* Font personalizzato */
+    font-size: 20px;
 }
 
-.footer .footer-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  order: 2;
+.footer-right {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    display: flex; /* Mantiene il layout flessibile */
+    justify-content: space-between; /* Centra gli elementi orizzontalmente */
+    gap: 15px; /* Spaziatura tra le icone */
+    margin-top: 10px; /* Sposta il contenitore leggermente più in basso */
+    flex-direction: row-reverse;
+    padding: 0 30px;
 }
 
-.footer-center{flex-direction: column;}
-
-.footer .footer-right {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  order: 3;
-}
 .btn-footer {
   text-decoration: none;
     flex: 0; /* Mantiene il pulsante centrato */
@@ -639,12 +633,30 @@ h1.animated::before {
     justify-content: flex-end; /* Allinea le icone a destra */
     gap: 15px; /* Spaziatura tra le icone */
     flex-wrap: nowrap; /* Evita che le icone vadano a capo */
-    margin-top: 10px; /* Sposta i link social leggermente più in basso */
+    margin-bottom: 10px; /* Sposta i link social leggermente più in basso */
 }
 
+.social-icons a {
+    display: inline-block; /* Rende il link un elemento inline-block */
+    width: 50px; /* Stessa larghezza delle immagini */
+    height: 50px; /* Stessa altezza delle immagini */
+    text-align: center; /* Centra il contenuto all'interno del link */
+    line-height: 50px; /* Allinea verticalmente il contenuto */
+}
+
+.social-icons img {
+    object-fit: contain; /* Mantiene le proporzioni dell'immagine */
+}
 
 social-icons img:hover {
     transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+}
+
+.social-icons p {margin: 0 !important;}
+
+.btn{
+  background-color:rgb(224, 9, 110) !important;
+  color: white  !important;
 }
 
 /* Media Query per dispositivi piccoli */
@@ -680,7 +692,6 @@ footer ul {
 
 .footer-bottom p {
   list-style: none;
-    margin-right: 15px; /* Aggiunge spazio orizzontale tra le immagini */
 }
 
 
@@ -700,9 +711,8 @@ footer ul {
 footer {
   color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  height: 30vh;
 }
 
 
@@ -726,20 +736,6 @@ footer {
     opacity: 1;
   }
 }
-
-/* Altri stili possono rimanere invariati */
-
-.footer-top, .footer-bottom {
-    display: flex; /* Abilita Flexbox */
-    justify-content: space-between; /* Centra orizzontalmente */
-    align-items: center; /* Centra verticalmente */
-    gap: 20px; /* Spaziatura tra l'h4 e il pulsante */
-    height: 100%; /* Assicura che il contenitore utilizzi tutta l'altezza disponibile */
-    text-align: center; /* Centra il testo */
-}
-
-/* Responsive Design */
-@media (max-width: 1709px) {.btn-download{display: none;}}
 
 @media (max-width: 992px) {
   .btn-download{display: none;}
@@ -874,7 +870,7 @@ footer {
   }
 
   .hero h1 {
-    font-size: auto;
+    font-size: 42px;
     line-height: 50px;
   }
 

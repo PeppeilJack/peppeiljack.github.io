@@ -100,4 +100,24 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", updateActiveDot);
     window.addEventListener("resize", updateActiveDot); // Aggiorna su resize
     updateActiveDot(); // Inizializza la posizione al caricamento
+
+
+    (function() {
+      emailjs.init("k8KTOc5b9u0IFtZRk"); // <-- Sostituisci con la tua Public Key
+    })();
+  
+    const form = document.getElementById('contact-form');
+    const message = document.getElementById('form-message');
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_h4su60f', 'Ciao', this)
+        .then(() => {
+          message.innerHTML = `<div class="alert alert-success">Messaggio inviato con successo!</div>`;
+          form.reset();
+        }, (error) => {
+          message.innerHTML = `<div class="alert alert-danger">Errore: ${error.text}</div>`;
+        });
+    });
 });
