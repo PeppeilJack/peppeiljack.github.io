@@ -8,7 +8,7 @@ html, body {
 }
 body {
 	overflow-x: hidden;
-	background-image: url(./img/bg_hero.png);
+	background-image: url(/img/bg_hero.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -786,17 +786,17 @@ to {
 	}
 }
 .project-1 {
-	background-image: url(./img/project_1.jpg);
+	background-image: url(/img/project_1.jpg);
 	background-position: center;
 	background-size: contain;
 }
 .project-2 {
-	background-image: url(./img/project_2.jpg);
+	background-image: url(/img/project_2.jpg);
 	background-position: center;
 	background-size: contain;
 }
 .project-3 {
-	background-image: url(./img/project_3.png);
+	background-image: url(/img/project_3.png);
 	background-position: initial;
 	background-size: 800px 400px;
 }
