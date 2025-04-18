@@ -268,11 +268,12 @@ h2 {
   font-style: normal;
 }
 
+.box p{font-size: 18px; font-weight: bold;}
 p {
   font-family: "Chakra Petch", sans-serif;
   font-weight: 300;
-  font-style: normal;
-}
+  font-style:normal;
+  }
 
 .btn-hero {
   font-family: "Chakra Petch", sans-serif;
@@ -989,7 +990,7 @@ footer ul {
     align-items: center;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 992px) and (max-width: 1709px) {
   .btn-download {
     display: none;
   }
@@ -1048,3 +1049,4 @@ footer ul {
     display: none;
   }
 }/*# sourceMappingURL=main.css.map */
+

@@ -1,0 +1,178 @@
+/* Stili generali */
+html, body {
+  margin: 0;
+  padding: 50px 0 0 0;
+  font-family: 'Inter', sans-serif;
+  color: #333; /* Colore del testo */
+  line-height: 1.6; /* Altezza della linea */
+}
+
+.inter {font-family: "Inter", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;}
+
+.col-6{width: auto;}
+.col-3 {flex: 1 1 45%;}
+.col-12 {flex: 1 1 100%;flex-wrap: wrap;}
+
+.box {
+  background-color: rgba(128, 128, 128, 0.137);
+  border-radius: 30px;
+  gap: 10px; /* Spaziatura tra gli elementi */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);;
+}
+
+.box img{border-radius:50%;}
+
+
+
+
+/* Bio section */
+.default{margin-bottom: 10rem;gap: 20px;}
+
+.dati-personali, .box{background-color: rgba(128, 128, 128, 0.137);border-radius: 30px;padding: 20px;display: flex;flex-wrap: wrap;flex-direction: column;}
+
+.propic {flex: 1 1 30%; /* L'immagine occupa il 30% della larghezza */ height: 420px;}
+
+.propic img{border-radius: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);}
+
+.propic div{height: 50px !important;}
+
+.content {
+  flex: 1 1 70%; /* I contenuti occupano il 70% della larghezza */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info {
+  display: flex; /* Abilita Flexbox */
+  flex-wrap: wrap; /* Permette ai div di andare a capo */
+  gap: 40px; /* Spaziatura tra i div */
+}
+
+.bio{gap: 50px;width: auto; justify-content: space-between;height: 350px;}
+
+.width-bio{width: 45% !important;}
+.gap-20{gap: 20px;}
+
+
+
+/* Job section */
+.job .box{
+  height: auto;
+  width: 49%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.informazioni{display: flex;;gap:10px;justify-content: space-around;align-items: flex-start;}
+.year{border: 2px solid blue; border-radius: 15px;padding: 5px;}
+.year p{margin: 0; padding: 0;color: blue;}
+.elenco p{margin: 0; padding: 7px;}
+.logo-2{position: relative;left: -90px;top: 20px;z-index: 9;}
+
+
+.flex-d{flex-direction: row;}
+.d-inline{display: inline-block;}
+.esperienze{display: flex; flex-direction: row; flex-wrap: nowrap;align-items: center;justify-content: space-between;}
+.titoli{display: flex; flex-direction: row; flex-wrap: nowrap;align-items: center;}
+.margin-right{margin-right: 20px;}
+
+.width-bio img{margin-right: 20px; border-radius: 0;}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+    section .box{
+        width: 100%; /* I box occupano tutta la larghezza */
+        height: auto; /* Altezza automatica per adattarsi al contenuto */
+        
+    }
+
+    .bio{
+        gap: 0px; /* Riduce lo spazio tra gli elementi */
+        justify-content: space-evenly;
+    }
+
+    .width-bio{width: 48% !important;}
+    .info{gap: 20px;}
+
+}
+
+
+
+@media (max-width: 992px) {
+    .default{flex-direction: column;}
+    .col-4{width: auto !important;}
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+
+    .gap-20{gap: 10px;}
+  .info {
+    flex-direction: column; /* Dispone immagine e contenuti in colonna */
+    align-items: center;
+  }
+
+  .propic {
+    flex: 1 1 100%; /* L'immagine occupa il 100% della larghezza */
+    text-align: center;
+  }
+
+  .content {
+    flex: 1 1 100%; /* I contenuti occupano il 100% della larghezza */
+  }
+
+  .job .box {
+    width: 100%; /* I box occupano tutta la larghezza */
+    height: auto; /* Altezza automatica per adattarsi al contenuto */
+  }
+}
+
+/* Smartphone (max-width: 480px) */
+@media (max-width: 480px) {
+  .info {
+    gap: 20px; /* Riduce lo spazio tra gli elementi */
+  }
+
+  .propic img {
+    max-width: 80%; /* Riduce la dimensione dell'immagine */
+    height: auto;
+  }
+
+  .content {
+    gap: 15px; /* Riduce lo spazio tra i div */
+  }
+
+  .job .box {
+    padding: 15px; /* Riduce il padding interno */
+    border-radius: 20px; /* Riduce il raggio dei bordi */
+  }
+
+  .year {
+    font-size: 14px; /* Riduce la dimensione del testo */
+    padding: 3px;
+  }
+
+  .elenco p {
+    font-size: 14px; /* Riduce la dimensione del testo */
+    padding: 5px;
+  }
+
+  .width-bio {
+    width: 100% !important; /* L'immagine occupa il 100% della larghezza */
+  }
+
+  .bio{gap: 20px;}
+
+  .year{
+    display: none;
+  }
+
+  .informazioni{justify-content: initial;}
+  p img{width: 40px; height: 40px;}
+  .bio{height: 900px;}
+}
