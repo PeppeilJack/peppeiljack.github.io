@@ -752,8 +752,6 @@ h1.animated::before {
 }
 .social-icons a {
   display: inline-block;
-  width: 50px;
-  height: 50px;
   text-align: center;
   line-height: 50px;
 }
@@ -862,6 +860,7 @@ footer ul {
 }
 
 @media (max-width: 768px) {
+  #hero .container{padding:0 !important;}
   .box-skills{overflow: hidden;}
   .box-skills img {
     width: 30px;
@@ -1081,7 +1080,7 @@ footer ul {
     width: 100%;
   }
   .hero h1 {
-    font-size: 38px;
+    font-size: 33px;
     line-height: 60px;
   }
   .hero h2 {
@@ -1089,7 +1088,7 @@ footer ul {
     line-height: 36px;
   }
   .hero p {
-    font-size: 18px;
+    font-size: 13px;
     line-height: 28px;
   }
   .btn-hero {
