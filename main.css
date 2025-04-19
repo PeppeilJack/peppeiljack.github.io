@@ -524,7 +524,6 @@ h1.animated::before {
 }
 
 .avatar_gif {
-  max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
@@ -540,7 +539,6 @@ h1.animated::before {
 
 .about-me {
   margin-top: 2rem;
-  margin-right: 10rem;
   padding: 20px;
   border-radius: 10px;
   text-align: left;
