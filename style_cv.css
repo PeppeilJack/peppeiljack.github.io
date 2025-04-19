@@ -1,7 +1,7 @@
 /* Stili generali */
 
 
-
+.fw-normal{font-weight: normal;}
 .col-6{width: auto;}
 .col-3 {flex: 1 1 45%;}
 .col-12 {flex: 1 1 100%;flex-wrap: wrap;}
@@ -50,7 +50,7 @@ h5{  font-family: "Jersey 20", sans-serif;
 .width-bio{width: 45% !important;}
 .gap-20{gap: 20px;}
 
-
+.elenco p{font-weight: normal;}
 
 /* Job section */
 .job .box{
@@ -125,6 +125,8 @@ h5{  font-family: "Jersey 20", sans-serif;
     width: 100%; /* I box occupano tutta la larghezza */
     height: auto; /* Altezza automatica per adattarsi al contenuto */
   }
+  .bio{gap: 20px;height: 700px;}
+  .col-4{width: 100% !important;}
 }
 
 /* Smartphone (max-width: 480px) */
@@ -161,7 +163,6 @@ h5{  font-family: "Jersey 20", sans-serif;
     width: 100% !important; /* L'immagine occupa il 100% della larghezza */
   }
 
-  .bio{gap: 20px;}
 
   .year{
     display: none;

@@ -530,12 +530,12 @@ h1.animated::before {
 }
 
 .col-right {
-  flex: 1;
+  flex: 4;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 70%;
   color: rgb(224, 9, 110);
+  align-items: flex-start;
 }
 
 .about-me {
@@ -821,7 +821,54 @@ footer ul {
   animation: fadeInGif 2s ease-in-out forwards;
 }
 
+@media (min-width:1200px) and (max-width: 1709px) {
+  .btn-download {
+    display: none !important;
+}
+}
+@media (max-width: 1200px) {
+  .btn-download {
+    display: none !important;
+  }
+  .bio {
+    gap: 0px; /* Riduce lo spazio tra gli elementi */
+    justify-content: space-evenly;
+  }
+  .width-bio {
+    width: 48% !important;
+  }
+  .info {
+    gap: 20px;
+  }
+  .default {
+    flex-direction: column;
+  }
+  .col-4 {
+    width: auto !important;
+  }
+
+  .about {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  section .box {
+    width:100% !important; /* I box occupano tutta la larghezza */
+    height: auto; /* Altezza automatica per adattarsi al contenuto */
+  }
+}
+
 @media (max-width: 768px) {
+  .row{flex-wrap: nowrap !important;}
+  .box-skills{overflow: hidden;}
+  .box-skills img {
+    width: 30px;
+    height: 30px;
+  }
+  .btn-download {
+    display: none !important;
+  }
   .description {
     display: none;
     display: none;
@@ -1001,8 +1048,13 @@ footer ul {
     min-height: 200px;
     align-items: center;
   }
+  .hero .gif {
+    width: auto;
+    height: auto;
+  }
+
 }
-@media (min-width: 992px) and (max-width: 1709px) {
+@media (max-width: 992px) {
   .btn-download {
     display: none;
   }
@@ -1060,5 +1112,8 @@ footer ul {
   .container-btn {
     display: none;
   }
-}/*# sourceMappingURL=main.css.map */
 
+}
+
+@media (max-width: 400px) {
+}
