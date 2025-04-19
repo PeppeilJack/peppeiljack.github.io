@@ -1,11 +1,7 @@
 /* Stili generali */
-html, body {
-  margin: 0;
-  padding: 50px 0 0 0;
-  font-family: 'Inter', sans-serif;
-  color: #333; /* Colore del testo */
-  line-height: 1.6; /* Altezza della linea */
-}
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 
 .inter {font-family: "Inter", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;}
 
