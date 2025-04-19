@@ -822,11 +822,15 @@ footer ul {
 }
 
 @media (min-width:1200px) and (max-width: 1709px) {
+  .picture{align-items: flex-start !important;}
   .btn-download {
     display: none !important;
 }
 }
 @media (max-width: 1200px) {
+  .picture {
+    align-items: center !important;
+  }
   .btn-download {
     display: none !important;
   }
@@ -860,7 +864,6 @@ footer ul {
 }
 
 @media (max-width: 768px) {
-  .row{flex-wrap: nowrap !important;}
   .box-skills{overflow: hidden;}
   .box-skills img {
     width: 30px;
@@ -1054,7 +1057,7 @@ footer ul {
   }
 
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .btn-download {
     display: none;
   }
