@@ -262,13 +262,19 @@ h2 {
   font-style: normal;
 }
 
+h6 {
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3rem !important;
+}
 .jersey-25-regular {
   font-family: "Jersey 25", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.box p{font-size: 18px; font-weight: bold;}
+.box p{font-size: 18px; font-weight:500  ;font-family: "Chakra Petch", sans-serif;}
 p {
   font-family: "Chakra Petch", sans-serif;
   font-weight: 300;
@@ -877,10 +883,6 @@ footer ul {
   .social-icons {
     justify-content: center;
     justify-content: center;
-  }
-  .social-icons img {
-    width: 30px;
-    height: 30px;
   }
   .active-dot {
     width: 5px;
