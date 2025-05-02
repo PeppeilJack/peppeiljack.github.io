@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Typing effect nell'h1 Hero
     const textElement = document.querySelector("h1");
-    const fullText = "CIAO! IO SONO GIUSEPPE";
+    const fullText = "CIAO! I'M GIUSEPPE";
     let currentIndex = 0;
   
     function typeEffect() {
