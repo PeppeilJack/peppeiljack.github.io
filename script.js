@@ -1,1 +1,132 @@
-document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll(".slide");e.forEach(e=>{e.classList.remove("bounce-in-right"),e.style.opacity="0"});let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add("bounce-in-right"),e.target.style.opacity="1",t.unobserve(e.target))})},{threshold:.2});e.forEach(e=>t.observe(e));let n=document.querySelector("h1"),l="CIAO! I'M GIUSEPPE",o=0;function r(){o<l.length?(n.innerHTML=`<span class="highlight">${l.substring(0,o+1)}</span>`,o++,setTimeout(r,100)):n.innerHTML=`<span class="highlight done">${l}</span>`}setTimeout(r,500),window.history.replaceState({},document.title,window.location.pathname);let i=document.querySelector("#project"),s=document.querySelector(".gif-animation");window.addEventListener("scroll",function e(){if(!i||!s)return;let t=i.offsetTop,n=i.offsetHeight,l=window.scrollY+window.innerHeight;l>=t&&l<=t+n&&s.classList.add("show")});let a=document.querySelectorAll("section, .container-fluid, footer"),c=document.querySelectorAll(".nav-link"),f=document.querySelector(".active-dot");function d(){let e=null,t=window.scrollY+window.innerHeight/2,n=document.body.scrollHeight,l=window.innerHeight+window.scrollY>=n-5;a.forEach(n=>{let o=n.offsetTop,r=n.offsetHeight,i=n.getAttribute("id");(t>=o&&t<o+r||"footer"===n.tagName.toLowerCase()&&l)&&(e=i)}),c.forEach(t=>{let n=t.getAttribute("href").substring(1);if(n===e){let l=t.getBoundingClientRect(),o=t.closest(".navbar").getBoundingClientRect();f.style.top=`${l.bottom-o.top+5}px`,f.style.left=`${l.left-o.left+l.width/2-f.offsetWidth/2}px`,f.style.opacity="1"}}),e||(f.style.opacity="0")}window.addEventListener("scroll",d),window.addEventListener("resize",d),d();let h=document.querySelector("#contact-form button[type='button']");h.addEventListener("click",function e(){let t=document.getElementById("email"),n=document.getElementById("form-message"),l=document.getElementById("contact-form");if(!t||!n||!l){console.error("Form elements not found!");return}let o={email:t.value,message:n.value};emailjs.send("service_h4su60f","template_55pkhe8",o).then(()=>{alert("Email successfully sent!"),l.reset()}).catch(e=>{console.error("Error sendind the email:",e),alert("Email non inviata. Riprova.")})})});
+document.addEventListener("DOMContentLoaded", function() {
+    // Animazioni per .slide
+    let slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => {
+        slide.classList.remove("bounce-in-right");
+        slide.style.opacity = "0";
+    });
+
+    // IntersectionObserver per animazioni solo quando necessario
+    let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("bounce-in-right");
+                entry.target.style.opacity = "1";
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    slides.forEach(slide => observer.observe(slide));
+
+    // Animazione del testo dell'H1
+    let h1 = document.querySelector("h1");
+    let text = "CIAO! I'M GIUSEPPE";
+    let index = 0;
+
+    function typeText() {
+        if (index < text.length) {
+            h1.innerHTML = `<span class="highlight">${text.substring(0, index + 1)}</span>`;
+            index++;
+            setTimeout(typeText, 100);
+        } else {
+            h1.innerHTML = `<span class="highlight done">${text}</span>`;
+        }
+    }
+
+    setTimeout(typeText, 500);
+    window.history.replaceState({}, document.title, window.location.pathname);
+
+    // Aggiungi animazione alla GIF quando entra in vista
+    let projectSection = document.querySelector("#project");
+    let gifAnimation = document.querySelector(".gif-animation");
+
+    window.addEventListener("scroll", function() {
+        if (!projectSection || !gifAnimation) return;
+        let sectionTop = projectSection.offsetTop;
+        let sectionHeight = projectSection.offsetHeight;
+        let scrollPosition = window.scrollY + window.innerHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
+            gifAnimation.classList.add("show");
+        }
+    });
+
+    // Navbar e indicatori di posizione
+    let sections = document.querySelectorAll("section, .container-fluid, footer");
+    let navLinks = document.querySelectorAll(".nav-link");
+    let activeDot = document.querySelector(".active-dot");
+
+    // Funzione per aggiornare l'indicatore di sezione attiva
+    function updateActiveNav() {
+        let currentSection = null;
+        let scrollPosition = window.scrollY + window.innerHeight / 2;
+        let pageBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 5;
+
+        sections.forEach(section => {
+            let sectionTop = section.offsetTop;
+            let sectionHeight = section.offsetHeight;
+            let sectionId = section.getAttribute("id");
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight || (section.tagName.toLowerCase() === "footer" && pageBottom)) {
+                currentSection = sectionId;
+            }
+        });
+
+        // Usa `requestAnimationFrame` per aggiornamenti più fluidi
+        requestAnimationFrame(() => {
+            navLinks.forEach(link => {
+                let linkHref = link.getAttribute("href").substring(1);
+                if (linkHref === currentSection) {
+                    let linkRect = link.getBoundingClientRect();
+                    let navbarRect = link.closest(".navbar").getBoundingClientRect();
+                    activeDot.style.top = `${linkRect.bottom - navbarRect.top + 5}px`;
+                    activeDot.style.left = `${linkRect.left - navbarRect.left + linkRect.width / 2 - activeDot.offsetWidth / 2}px`;
+                    activeDot.style.opacity = "1";
+                }
+            });
+
+            if (!currentSection) {
+                activeDot.style.opacity = "0";
+            }
+        });
+    }
+
+    // Aggiungi debounce per migliorare le performance dello scroll
+    let debounceTimer;
+    window.addEventListener("scroll", function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(updateActiveNav, 50); // Ritardo di 50ms
+    });
+
+    window.addEventListener("resize", updateActiveNav);
+    updateActiveNav();
+
+    // Invio del form di contatto tramite emailjs
+    let contactButton = document.querySelector("#contact-form button[type='button']");
+    contactButton.addEventListener("click", function() {
+        let email = document.getElementById("email");
+        let message = document.getElementById("form-message");
+        let form = document.getElementById("contact-form");
+
+        if (!email || !message || !form) {
+            console.error("Form elements not found!");
+            return;
+        }
+
+        let formData = {
+            email: email.value,
+            message: message.value
+        };
+
+        emailjs.send("service_h4su60f", "template_55pkhe8", formData)
+            .then(() => {
+                alert("Email successfully sent!");
+                form.reset();
+            })
+            .catch(error => {
+                console.error("Error sending the email:", error);
+                alert("Email non inviata. Riprova.");
+            });
+    });
+});
